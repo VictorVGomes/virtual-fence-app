@@ -1,0 +1,30 @@
+[
+    {
+        "merged": "com.victorgomes.geofenceapp-mergeDebugResources-55:/layout/fragment_fences.xml",
+        "source": "com.victorgomes.geofenceapp-main-58:/layout/fragment_fences.xml"
+    },
+    {
+        "merged": "com.victorgomes.geofenceapp-mergeDebugResources-55:/layout/dialog_create_fence.xml",
+        "source": "com.victorgomes.geofenceapp-main-58:/layout/dialog_create_fence.xml"
+    },
+    {
+        "merged": "com.victorgomes.geofenceapp-mergeDebugResources-55:/layout/item_geofence_event.xml",
+        "source": "com.victorgomes.geofenceapp-main-58:/layout/item_geofence_event.xml"
+    },
+    {
+        "merged": "com.victorgomes.geofenceapp-mergeDebugResources-55:/layout/fragment_map.xml",
+        "source": "com.victorgomes.geofenceapp-main-58:/layout/fragment_map.xml"
+    },
+    {
+        "merged": "com.victorgomes.geofenceapp-mergeDebugResources-55:/layout/fragment_log.xml",
+        "source": "com.victorgomes.geofenceapp-main-58:/layout/fragment_log.xml"
+    },
+    {
+        "merged": "com.victorgomes.geofenceapp-mergeDebugResources-55:/layout/activity_main.xml",
+        "source": "com.victorgomes.geofenceapp-main-58:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.victorgomes.geofenceapp-mergeDebugResources-55:/layout/item_fence.xml",
+        "source": "com.victorgomes.geofenceapp-main-58:/layout/item_fence.xml"
+    }
+]

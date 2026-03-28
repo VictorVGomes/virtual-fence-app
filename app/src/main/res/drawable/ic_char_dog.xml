@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="36dp"
+    android:height="36dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+
+    <!-- Floppy ears (drawn first so head overlaps at the top) -->
+    <path
+        android:fillColor="#4E342E"
+        android:pathData="M7,8 Q2,9 2.5,15 Q3.5,19 8,17.5 Q6.5,13 7,8 Z
+                          M17,8 Q22,9 21.5,15 Q20.5,19 16,17.5 Q17.5,13 17,8 Z"/>
+
+    <!-- Head -->
+    <path
+        android:fillColor="#6D4C41"
+        android:pathData="M12,5c-3.87,0 -7,3.13 -7,7s3.13,7 7,7 7,-3.13 7,-7 -3.13,-7 -7,-7z"/>
+
+    <!-- Muzzle / snout (lighter area) -->
+    <path
+        android:fillColor="#8D6E63"
+        android:pathData="M8.5,14 A3.5,2.5 0 0 1 15.5,14 A3.5,2.5 0 0 1 8.5,14 Z"/>
+
+    <!-- Eyes -->
+    <path
+        android:fillColor="#1A1A1A"
+        android:pathData="M8.9,10 A1.1,1.1 0 0 0 11.1,10 A1.1,1.1 0 0 0 8.9,10 Z
+                          M12.9,10 A1.1,1.1 0 0 0 15.1,10 A1.1,1.1 0 0 0 12.9,10 Z"/>
+
+    <!-- Eye highlights (white glint) -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M9.3,9.4 A0.4,0.4 0 0 0 10.1,9.4 A0.4,0.4 0 0 0 9.3,9.4 Z
+                          M13.3,9.4 A0.4,0.4 0 0 0 14.1,9.4 A0.4,0.4 0 0 0 13.3,9.4 Z"/>
+
+    <!-- Nose (wide oval on top of muzzle) -->
+    <path
+        android:fillColor="#1A1A1A"
+        android:pathData="M10.2,13 A1.8,1.1 0 0 1 13.8,13 A1.8,1.1 0 0 1 10.2,13 Z"/>
+
+    <!-- Mouth -->
+    <path
+        android:fillColor="@android:color/transparent"
+        android:strokeColor="#5D4037"
+        android:strokeWidth="0.65"
+        android:strokeLineCap="round"
+        android:pathData="M10.5,15.5 Q12,16.5 13.5,15.5"/>
+
+    <!-- Tongue (cute detail) -->
+    <path
+        android:fillColor="#EF9A9A"
+        android:pathData="M11.2,16.2 A0.8,0.7 0 0 1 12.8,16.2 A0.8,0.7 0 0 1 11.2,16.2 Z"/>
+
+</vector>

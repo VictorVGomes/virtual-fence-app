@@ -1,0 +1,50 @@
+[
+    {
+        "merged": "com.victorgomes.geofenceapp-merged_res-56:/xml_file_paths.xml.flat",
+        "source": "com.victorgomes.geofenceapp-main-58:/xml/file_paths.xml"
+    },
+    {
+        "merged": "com.victorgomes.geofenceapp-merged_res-56:/xml_network_security_config.xml.flat",
+        "source": "com.victorgomes.geofenceapp-main-58:/xml/network_security_config.xml"
+    },
+    {
+        "merged": "com.victorgomes.geofenceapp-merged_res-56:/layout_fragment_log.xml.flat",
+        "source": "com.victorgomes.geofenceapp-main-58:/layout/fragment_log.xml"
+    },
+    {
+        "merged": "com.victorgomes.geofenceapp-merged_res-56:/layout_fragment_map.xml.flat",
+        "source": "com.victorgomes.geofenceapp-main-58:/layout/fragment_map.xml"
+    },
+    {
+        "merged": "com.victorgomes.geofenceapp-merged_res-56:/layout_activity_main.xml.flat",
+        "source": "com.victorgomes.geofenceapp-main-58:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.victorgomes.geofenceapp-merged_res-56:/layout_item_geofence_event.xml.flat",
+        "source": "com.victorgomes.geofenceapp-main-58:/layout/item_geofence_event.xml"
+    },
+    {
+        "merged": "com.victorgomes.geofenceapp-merged_res-56:/layout_fragment_fences.xml.flat",
+        "source": "com.victorgomes.geofenceapp-main-58:/layout/fragment_fences.xml"
+    },
+    {
+        "merged": "com.victorgomes.geofenceapp-merged_res-56:/navigation_nav_graph.xml.flat",
+        "source": "com.victorgomes.geofenceapp-main-58:/navigation/nav_graph.xml"
+    },
+    {
+        "merged": "com.victorgomes.geofenceapp-merged_res-56:/menu_bottom_nav_menu.xml.flat",
+        "source": "com.victorgomes.geofenceapp-main-58:/menu/bottom_nav_menu.xml"
+    },
+    {
+        "merged": "com.victorgomes.geofenceapp-merged_res-56:/layout_item_fence.xml.flat",
+        "source": "com.victorgomes.geofenceapp-main-58:/layout/item_fence.xml"
+    },
+    {
+        "merged": "com.victorgomes.geofenceapp-merged_res-56:/layout_dialog_create_fence.xml.flat",
+        "source": "com.victorgomes.geofenceapp-main-58:/layout/dialog_create_fence.xml"
+    },
+    {
+        "merged": "com.victorgomes.geofenceapp-merged_res-56:/drawable_ic_fence.xml.flat",
+        "source": "com.victorgomes.geofenceapp-main-58:/drawable/ic_fence.xml"
+    }
+]

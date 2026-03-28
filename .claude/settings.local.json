@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//mnt/c/Users/victo/OneDrive/Desktop/droid/**)",
+      "Bash(./gradlew assembleDebug)",
+      "Bash(cmd.exe /c \"cd /d C:\\\\Users\\\\victo\\\\OneDrive\\\\Desktop\\\\droid\\\\virtual_fence && gradlew.bat assembleDebug 2>&1\")",
+      "Bash(cmd.exe /c \"cd /d C:\\\\Users\\\\victo\\\\OneDrive\\\\Desktop\\\\droid\\\\virtual_fence && gradlew.bat assembleDebug\" 2>&1)",
+      "Bash(cmd.exe /c \"cd /d C:\\\\Users\\\\victo\\\\OneDrive\\\\Desktop\\\\droid\\\\virtual_fence && gradlew.bat assembleDebug > C:\\\\Users\\\\victo\\\\build_output.txt 2>&1 && echo DONE || echo FAILED\")",
+      "Bash(powershell.exe -Command \"Set-Location 'C:\\\\Users\\\\victo\\\\OneDrive\\\\Desktop\\\\droid\\\\virtual_fence'; .\\\\gradlew.bat assembleDebug 2>&1 | Out-File -FilePath 'C:\\\\Users\\\\victo\\\\build_out.txt' -Encoding utf8; Get-Content 'C:\\\\Users\\\\victo\\\\build_out.txt' | Select-Object -Last 100\")",
+      "Bash(powershell.exe -Command \"Get-ChildItem 'C:\\\\Users\\\\victo\\\\OneDrive\\\\Desktop\\\\droid\\\\virtual_fence' -Name\")",
+      "mcp__ide__getDiagnostics",
+      "Bash(grep -r \"dialog_create_fence\\\\|DialogCreateFence\\\\|CreateFenceDialog\" /c/Users/victo/OneDrive/Desktop/droid/virtual_fence/app/src/main/java --include=*.kt)",
+      "Bash(xargs grep:*)",
+      "Bash(find /c/Users/victo/OneDrive/Desktop/droid/virtual_fence -name build.gradle* -type f)",
+      "Bash(grep -r card_icon_pin /c/Users/victo/OneDrive/Desktop/droid/virtual_fence --include=*.kt)",
+      "Bash(cp -r \"C:/Users/victo/OneDrive/Desktop/droid/virtual_fence/ic_launcher/res/mipmap-mdpi\" \"C:/Users/victo/OneDrive/Desktop/droid/virtual_fence/app/src/main/res/\")",
+      "Bash(cp -r \"C:/Users/victo/OneDrive/Desktop/droid/virtual_fence/ic_launcher/res/mipmap-hdpi\" \"C:/Users/victo/OneDrive/Desktop/droid/virtual_fence/app/src/main/res/\")",
+      "Bash(cp -r \"C:/Users/victo/OneDrive/Desktop/droid/virtual_fence/ic_launcher/res/mipmap-xhdpi\" \"C:/Users/victo/OneDrive/Desktop/droid/virtual_fence/app/src/main/res/\")",
+      "Bash(cp -r \"C:/Users/victo/OneDrive/Desktop/droid/virtual_fence/ic_launcher/res/mipmap-xxhdpi\" \"C:/Users/victo/OneDrive/Desktop/droid/virtual_fence/app/src/main/res/\")",
+      "Bash(cp -r \"C:/Users/victo/OneDrive/Desktop/droid/virtual_fence/ic_launcher/res/mipmap-xxxhdpi\" \"C:/Users/victo/OneDrive/Desktop/droid/virtual_fence/app/src/main/res/\")"
+    ]
+  }
+}

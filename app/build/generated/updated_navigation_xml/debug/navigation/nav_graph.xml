@@ -1,0 +1,26 @@
+<navigation
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+android:id="@+id/nav_graph"
+app:startDestination="@id/mapFragment" >
+<fragment
+    android:id="@+id/mapFragment"
+    android:name="com.victorgomes.geofenceapp.ui.map.MapFragment"
+    android:label="Map" />
+<fragment
+    android:id="@+id/fencesFragment"
+    android:name="com.victorgomes.geofenceapp.ui.fences.FencesFragment"
+    android:label="Fences" />
+<fragment
+    android:id="@+id/logFragment"
+    android:name="com.victorgomes.geofenceapp.ui.log.LogFragment"
+    android:label="Event Log" />
+<fragment
+    android:id="@+id/personalizationFragment"
+    android:name="com.victorgomes.geofenceapp.ui.personalization.PersonalizationFragment"
+    android:label="Personalization" />
+<fragment
+    android:id="@+id/debugFragment"
+    android:name="com.victorgomes.geofenceapp.ui.debug.DebugFragment"
+    android:label="Debug" />
+</navigation>

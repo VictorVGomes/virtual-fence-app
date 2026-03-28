@@ -1,0 +1,419 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:title="Settings"
+            app:titleTextAppearance="?attr/textAppearanceHeadlineSmall" />
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tab_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <!-- ── Settings content ── -->
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/content_settings"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- ── My location icon ── -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="My location icon"
+                android:textAppearance="?attr/textAppearanceTitleMedium" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="Icon shown at your position on the map."
+                android:textAppearance="?attr/textAppearanceBodySmall"
+                android:textColor="?attr/colorOnSurfaceVariant" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:orientation="horizontal">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card_char_male"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_margin="4dp"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="0dp"
+                    app:strokeWidth="2dp">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="vertical" android:gravity="center_horizontal" android:padding="12dp">
+                        <ImageView android:layout_width="36dp" android:layout_height="36dp"
+                            app:srcCompat="@drawable/ic_char_male" android:contentDescription="Male" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp" android:text="Male"
+                            android:textAppearance="?attr/textAppearanceLabelSmall" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card_char_female"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_margin="4dp"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="0dp"
+                    app:strokeWidth="2dp">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="vertical" android:gravity="center_horizontal" android:padding="12dp">
+                        <ImageView android:layout_width="36dp" android:layout_height="36dp"
+                            app:srcCompat="@drawable/ic_char_female" android:contentDescription="Female" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp" android:text="Female"
+                            android:textAppearance="?attr/textAppearanceLabelSmall" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card_char_cat"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_margin="4dp"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="0dp"
+                    app:strokeWidth="2dp">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="vertical" android:gravity="center_horizontal" android:padding="12dp">
+                        <ImageView android:layout_width="36dp" android:layout_height="36dp"
+                            app:srcCompat="@drawable/ic_char_cat" android:contentDescription="Cat" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp" android:text="Cat"
+                            android:textAppearance="?attr/textAppearanceLabelSmall" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card_char_dog"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_margin="4dp"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="0dp"
+                    app:strokeWidth="2dp">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="vertical" android:gravity="center_horizontal" android:padding="12dp">
+                        <ImageView android:layout_width="36dp" android:layout_height="36dp"
+                            app:srcCompat="@drawable/ic_char_dog" android:contentDescription="Dog" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp" android:text="Dog"
+                            android:textAppearance="?attr/textAppearanceLabelSmall" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+            </LinearLayout>
+
+            <!-- ── Fence marker ── -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
+                android:text="Fence marker"
+                android:textAppearance="?attr/textAppearanceTitleMedium" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="Icon shown at the centre of each fence."
+                android:textAppearance="?attr/textAppearanceBodySmall"
+                android:textColor="?attr/colorOnSurfaceVariant" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:orientation="horizontal">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card_fence_pin"
+                    android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:layout_margin="4dp"
+                    app:cardCornerRadius="12dp" app:cardElevation="0dp" app:strokeWidth="2dp">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="vertical" android:gravity="center_horizontal" android:padding="12dp">
+                        <ImageView android:layout_width="36dp" android:layout_height="36dp"
+                            app:srcCompat="@drawable/ic_fence_pin" android:contentDescription="Pin" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp" android:text="Pin" android:textAppearance="?attr/textAppearanceLabelSmall" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card_fence_home"
+                    android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:layout_margin="4dp"
+                    app:cardCornerRadius="12dp" app:cardElevation="0dp" app:strokeWidth="2dp">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="vertical" android:gravity="center_horizontal" android:padding="12dp">
+                        <ImageView android:layout_width="36dp" android:layout_height="36dp"
+                            app:srcCompat="@drawable/ic_fence_home" android:contentDescription="Home" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp" android:text="Home" android:textAppearance="?attr/textAppearanceLabelSmall" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card_fence_flag"
+                    android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:layout_margin="4dp"
+                    app:cardCornerRadius="12dp" app:cardElevation="0dp" app:strokeWidth="2dp">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="vertical" android:gravity="center_horizontal" android:padding="12dp">
+                        <ImageView android:layout_width="36dp" android:layout_height="36dp"
+                            app:srcCompat="@drawable/ic_fence_flag" android:contentDescription="Flag" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp" android:text="Flag" android:textAppearance="?attr/textAppearanceLabelSmall" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:orientation="horizontal">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card_fence_star"
+                    android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:layout_margin="4dp"
+                    app:cardCornerRadius="12dp" app:cardElevation="0dp" app:strokeWidth="2dp">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="vertical" android:gravity="center_horizontal" android:padding="12dp">
+                        <ImageView android:layout_width="36dp" android:layout_height="36dp"
+                            app:srcCompat="@drawable/ic_fence_star" android:contentDescription="Star" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp" android:text="Star" android:textAppearance="?attr/textAppearanceLabelSmall" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card_fence_bell"
+                    android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:layout_margin="4dp"
+                    app:cardCornerRadius="12dp" app:cardElevation="0dp" app:strokeWidth="2dp">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="vertical" android:gravity="center_horizontal" android:padding="12dp">
+                        <ImageView android:layout_width="36dp" android:layout_height="36dp"
+                            app:srcCompat="@drawable/ic_fence_bell" android:contentDescription="Bell" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp" android:text="Bell" android:textAppearance="?attr/textAppearanceLabelSmall" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card_fence_heart"
+                    android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:layout_margin="4dp"
+                    app:cardCornerRadius="12dp" app:cardElevation="0dp" app:strokeWidth="2dp">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="vertical" android:gravity="center_horizontal" android:padding="12dp">
+                        <ImageView android:layout_width="36dp" android:layout_height="36dp"
+                            app:srcCompat="@drawable/ic_fence_heart" android:contentDescription="Heart" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp" android:text="Heart" android:textAppearance="?attr/textAppearanceLabelSmall" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+            </LinearLayout>
+
+            <!-- ── Notifications ── -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
+                android:text="Notifications"
+                android:textAppearance="?attr/textAppearanceTitleMedium" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="0dp"
+                app:strokeWidth="1dp"
+                app:strokeColor="?attr/colorOutlineVariant">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="horizontal" android:padding="16dp" android:gravity="center_vertical">
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:orientation="vertical">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="Event notifications"
+                            android:textAppearance="?attr/textAppearanceBodyMedium" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:text="Show a notification when you enter or exit a fence."
+                            android:textAppearance="?attr/textAppearanceBodySmall"
+                            android:textColor="?attr/colorOnSurfaceVariant" />
+                    </LinearLayout>
+                    <com.google.android.material.materialswitch.MaterialSwitch
+                        android:id="@+id/switch_event_notifications"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_notification_settings"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Configure notification sound &amp; vibration" />
+
+            <!-- ── Version (tap 5× to unlock debug) ── -->
+            <TextView
+                android:id="@+id/tv_app_version"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="36dp"
+                android:layout_marginBottom="8dp"
+                android:layout_gravity="center_horizontal"
+                android:padding="8dp"
+                android:textAppearance="?attr/textAppearanceBodySmall"
+                android:textColor="?attr/colorOnSurfaceVariant" />
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- ── Tutorial content ── -->
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/content_tutorial"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Map -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="🗺️  Map"
+                android:textAppearance="?attr/textAppearanceTitleLarge"
+                android:layout_marginBottom="6dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?attr/textAppearanceBodyMedium"
+                android:lineSpacingMultiplier="1.4"
+                android:text="• Long-press anywhere on the map to create a new geofence at that location.\n• Tap a fence pin to see its name, radius, and how far away you are.\n• Drag a pin to move the fence to a new location.\n• The status pill at the top shows which fences you are currently inside and for how long.\n• Use the zoom controls and the ⊙ button on the bottom-right to navigate the map.\n• The layer button toggles between standard and topographic tiles.\n• The search button lets you jump to any address or place name." />
+
+            <View android:layout_width="match_parent" android:layout_height="1dp"
+                android:layout_marginVertical="20dp"
+                android:background="?attr/colorOutlineVariant" />
+
+            <!-- My Fences -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="📍  My Fences"
+                android:textAppearance="?attr/textAppearanceTitleLarge"
+                android:layout_marginBottom="6dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?attr/textAppearanceBodyMedium"
+                android:lineSpacingMultiplier="1.4"
+                android:text="• Each card shows a fence's name, radius, and distance from your current position.\n• Use the toggle switch to activate or deactivate monitoring for that fence. Active fences appear green on the map.\n• Tap the pencil icon to rename the fence, change its radius, or switch its marker icon.\n• Tap the trash icon to permanently delete the fence.\n• When you are inside a fence, a green badge appears showing the time of entry and how long you have been inside.\n• The app monitors active fences in the background even when closed." />
+
+            <View android:layout_width="match_parent" android:layout_height="1dp"
+                android:layout_marginVertical="20dp"
+                android:background="?attr/colorOutlineVariant" />
+
+            <!-- Event Log -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="📋  Event Log"
+                android:textAppearance="?attr/textAppearanceTitleLarge"
+                android:layout_marginBottom="6dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?attr/textAppearanceBodyMedium"
+                android:lineSpacingMultiplier="1.4"
+                android:text="• Every time you enter or exit an active fence, an event is recorded here with a timestamp and your exact coordinates.\n• Tap the pencil icon on an event to tag it with an observation (Rain, Traffic, or a custom reason).\n• Long-press any event to enter selection mode, then tap others to select multiple events and delete them.\n• Use the filter chips at the top to show events for a single fence.\n• The Statistics button (top-right) shows entry/exit counts and your most active fence.\n• Export to CSV saves all events to a file you can open in a spreadsheet.\n• Clear Log deletes all events permanently." />
+
+            <View android:layout_width="match_parent" android:layout_height="1dp"
+                android:layout_marginVertical="20dp"
+                android:background="?attr/colorOutlineVariant" />
+
+            <!-- Settings -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="⚙️  Settings"
+                android:textAppearance="?attr/textAppearanceTitleLarge"
+                android:layout_marginBottom="6dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?attr/textAppearanceBodyMedium"
+                android:lineSpacingMultiplier="1.4"
+                android:text="• Choose the icon shown at your position on the map (male, female, cat, or dog).\n• Choose the default marker icon shown at the centre of each fence.\n• Toggle event notifications on or off. When enabled, a push notification appears every time you cross a fence boundary.\n• Tap Configure to customise the notification sound and vibration for this app." />
+
+            <View android:layout_width="match_parent" android:layout_height="1dp"
+                android:layout_marginVertical="20dp"
+                android:background="?attr/colorOutlineVariant" />
+
+            <!-- Debug mode -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="🐛  Debug Mode"
+                android:textAppearance="?attr/textAppearanceTitleLarge"
+                android:layout_marginBottom="6dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?attr/textAppearanceBodyMedium"
+                android:lineSpacingMultiplier="1.4"
+                android:text="Debug mode lets you simulate movement to test fence mechanics without physically walking.\n\nTo unlock:\n1. Go to Settings → scroll to the bottom.\n2. Tap the version number 5 times within 5 seconds.\n3. A bug icon (🐛) will appear next to the version — debug mode is now active.\n\nTo use:\n• A bug FAB appears on the bottom-left of the Map screen. Tap it to open the debug panel.\n• Enable Mock Location with the toggle (you must first set this app as the Mock Location App in Android Developer Options).\n• Tap Snap to GPS to place your virtual position at your real GPS location.\n• Use the D-pad arrows (↑ ↓ ← →) to move your virtual position step by step.\n• Choose a step size: 5 m, 20 m, 100 m, or 500 m.\n• The blue dot on the map moves with your virtual position.\n• Fence crossings are detected and logged exactly as they would be in real use.\n\nTo disable:\n• Long-press the version number (showing 🐛) in Settings and confirm." />
+
+            <View android:layout_width="match_parent" android:layout_height="20dp" />
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

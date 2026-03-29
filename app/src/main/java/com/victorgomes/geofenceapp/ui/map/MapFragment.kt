@@ -77,7 +77,7 @@ class MapFragment : Fragment() {
     private var lastKnownConfigs: List<GeofenceConfigEntity> = emptyList()
     private var currentlyOpenMarker: Marker? = null
     private var isSearchOpen = false
-    private var useTopoMap = false
+    private var useAltMap = false
 
     // ── Debug / mock location ─────────────────────────────────────────────────
     private var isDebugPanelOpen = false
@@ -132,9 +132,16 @@ class MapFragment : Fragment() {
         }
     }
 
-    private val topoTileSource = XYTileSource(
-        "OpenTopoMap", 0, 17, 256, ".png",
-        arrayOf("https://tile.opentopomap.org/")
+    // CartoDB Voyager: a polished, modern map style with sharper typography and
+    // higher cartographic quality than standard MAPNIK. Free, no API key required.
+    private val cartoVoyagerTileSource = XYTileSource(
+        "CartoDB.Voyager", 0, 19, 256, ".png",
+        arrayOf(
+            "https://a.basemaps.cartocdn.com/rastertiles/voyager/",
+            "https://b.basemaps.cartocdn.com/rastertiles/voyager/",
+            "https://c.basemaps.cartocdn.com/rastertiles/voyager/",
+            "https://d.basemaps.cartocdn.com/rastertiles/voyager/"
+        )
     )
 
     private val locationPermissionLauncher = registerForActivityResult(
@@ -169,7 +176,15 @@ class MapFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        Configuration.getInstance().userAgentValue = requireContext().packageName
+        Configuration.getInstance().also {
+            it.userAgentValue = requireContext().packageName
+            // More concurrent tile downloads so the map fills in faster.
+            it.tileDownloadThreads = 4.toShort()
+            it.tileDownloadMaxQueueSize = 16.toShort()
+            // Keep more tiles in memory so adjacent zoom levels are already available
+            // when the user pinches in or out, avoiding a stretch-then-reload flash.
+            it.cacheMapTileCount = 25.toShort()
+        }
 
         ViewCompat.setOnApplyWindowInsetsListener(binding.cardStatus) { v, insets ->
             val statusBarHeight = insets.getInsets(WindowInsetsCompat.Type.statusBars()).top
@@ -243,6 +258,8 @@ class MapFragment : Fragment() {
         mapView.setTileSource(TileSourceFactory.MAPNIK)
         mapView.setMultiTouchControls(true)
         mapView.setBuiltInZoomControls(false)
+        mapView.minZoomLevel = 3.0
+        mapView.maxZoomLevel = 19.0
 
         val rotationOverlay = org.osmdroid.views.overlay.gestures.RotationGestureOverlay(mapView)
         rotationOverlay.isEnabled = true
@@ -518,9 +535,9 @@ class MapFragment : Fragment() {
         binding.btnZoomWorld.setOnClickListener { binding.mapView.controller.zoomTo(13.0, 1500L) }
 
         binding.btnMapType.setOnClickListener {
-            useTopoMap = !useTopoMap
+            useAltMap = !useAltMap
             binding.mapView.setTileSource(
-                if (useTopoMap) topoTileSource else org.osmdroid.tileprovider.tilesource.TileSourceFactory.MAPNIK
+                if (useAltMap) cartoVoyagerTileSource else TileSourceFactory.MAPNIK
             )
             binding.mapView.invalidate()
         }

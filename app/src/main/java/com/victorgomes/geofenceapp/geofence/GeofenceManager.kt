@@ -41,9 +41,10 @@ class GeofenceManager(private val context: Context) {
             .setTransitionTypes(
                 Geofence.GEOFENCE_TRANSITION_ENTER or Geofence.GEOFENCE_TRANSITION_EXIT
             )
-            // Deliver raw transitions quickly so our ConfirmationWorker can start
-            // its 30-second sampling window without delay.
-            .setNotificationResponsiveness(5_000)
+            // The confirmation worker waits 45 s before logging an event, so a
+            // 30-second delivery delay is imperceptible end-to-end but meaningfully
+            // reduces OS wake-ups from the geofencing subsystem.
+            .setNotificationResponsiveness(30_000)
             .build()
 
         val request = GeofencingRequest.Builder()

@@ -12,11 +12,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.google.android.gms.location.LocationCallback
-import com.google.android.gms.location.LocationRequest
-import com.google.android.gms.location.LocationResult
 import com.google.android.gms.location.LocationServices
-import com.google.android.gms.location.Priority
 import com.google.android.material.color.MaterialColors
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.victorgomes.geofenceapp.databinding.DialogCreateFenceBinding
@@ -35,7 +31,14 @@ class FencesFragment : Fragment() {
 
     private val tickHandler = Handler(Looper.getMainLooper())
     private val tickRunnable = object : Runnable {
+        @SuppressLint("MissingPermission")
         override fun run() {
+            // Piggyback on the last fix already cached by the monitor service — no new
+            // radio request needed. The inside/outside indicator and time counter both
+            // refresh every 60 s, so this resolution is sufficient.
+            fusedLocationClient.lastLocation.addOnSuccessListener { loc ->
+                if (loc != null) updateInsideStatus(loc)
+            }
             adapter.notifyItemRangeChanged(0, adapter.itemCount)
             tickHandler.postDelayed(this, 60_000L)
         }
@@ -48,33 +51,30 @@ class FencesFragment : Fragment() {
     // Used as the "since" reference when no DB ENTER event exists yet.
     private val localEntryTimes = mutableMapOf<String, Long>()
 
-    private val locationCallback = object : LocationCallback() {
-        override fun onLocationResult(result: LocationResult) {
-            val loc = result.lastLocation ?: return
-            adapter.userLocation = loc
+    private fun updateInsideStatus(loc: Location) {
+        adapter.userLocation = loc
 
-            // Real-time inside detection: compare GPS position against every fence boundary.
-            val configs = viewModel.fences.value ?: return
-            val prevInside = adapter.insideFenceIds
-            val inside = mutableSetOf<String>()
-            val distResults = FloatArray(1)
-            configs.forEach { config ->
-                Location.distanceBetween(
-                    loc.latitude, loc.longitude,
-                    config.latitude, config.longitude,
-                    distResults
-                )
-                if (distResults[0] <= config.radiusMeters) inside.add(config.id)
-            }
-
-            // Record entry time the first moment GPS detects "inside".
-            inside.forEach { id -> if (id !in prevInside) localEntryTimes[id] = System.currentTimeMillis() }
-            // Remove stale entry times for fences the user has left.
-            prevInside.forEach { id -> if (id !in inside) localEntryTimes.remove(id) }
-
-            adapter.localEntryTimes = localEntryTimes.toMap()
-            adapter.insideFenceIds = inside
+        // Compare GPS position against every fence boundary.
+        val configs = viewModel.fences.value ?: return
+        val prevInside = adapter.insideFenceIds
+        val inside = mutableSetOf<String>()
+        val distResults = FloatArray(1)
+        configs.forEach { config ->
+            Location.distanceBetween(
+                loc.latitude, loc.longitude,
+                config.latitude, config.longitude,
+                distResults
+            )
+            if (distResults[0] <= config.radiusMeters) inside.add(config.id)
         }
+
+        // Record entry time the first moment GPS detects "inside".
+        inside.forEach { id -> if (id !in prevInside) localEntryTimes[id] = System.currentTimeMillis() }
+        // Remove stale entry times for fences the user has left.
+        prevInside.forEach { id -> if (id !in inside) localEntryTimes.remove(id) }
+
+        adapter.localEntryTimes = localEntryTimes.toMap()
+        adapter.insideFenceIds = inside
     }
 
 
@@ -147,19 +147,13 @@ class FencesFragment : Fragment() {
         }
     }
 
-    @SuppressLint("MissingPermission")
     override fun onResume() {
         super.onResume()
-        val request = LocationRequest.Builder(Priority.PRIORITY_BALANCED_POWER_ACCURACY, 5_000L)
-            .setMinUpdateIntervalMillis(2_000L)
-            .build()
-        fusedLocationClient.requestLocationUpdates(request, locationCallback, Looper.getMainLooper())
         tickHandler.post(tickRunnable)
     }
 
     override fun onPause() {
         super.onPause()
-        fusedLocationClient.removeLocationUpdates(locationCallback)
         tickHandler.removeCallbacks(tickRunnable)
     }
 

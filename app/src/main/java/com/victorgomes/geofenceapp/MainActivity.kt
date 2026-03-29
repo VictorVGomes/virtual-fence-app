@@ -39,11 +39,16 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
-        handleNotificationIntent(intent)
+        // Defer to the next frame so the NavController's start-destination transaction
+        // is committed before we navigate away to the log. Calling navigate() directly
+        // in onCreate() races with the initial fragment setup and can leave mapFragment
+        // in a partially-initialised state when the user later opens the map tab.
+        binding.root.post { handleNotificationIntent(intent) }
     }
 
     override fun onNewIntent(intent: Intent) {
         super.onNewIntent(intent)
+        // Activity is already running — NavController is stable, navigate immediately.
         handleNotificationIntent(intent)
     }
 

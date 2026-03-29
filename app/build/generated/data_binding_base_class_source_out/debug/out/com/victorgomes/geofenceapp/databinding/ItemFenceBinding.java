@@ -4,6 +4,7 @@ package com.victorgomes.geofenceapp.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -28,6 +29,9 @@ public final class ItemFenceBinding implements ViewBinding {
   public final MaterialButton btnEditFence;
 
   @NonNull
+  public final ImageView ivFenceIcon;
+
+  @NonNull
   public final MaterialSwitch switchActive;
 
   @NonNull
@@ -47,12 +51,14 @@ public final class ItemFenceBinding implements ViewBinding {
 
   private ItemFenceBinding(@NonNull MaterialCardView rootView,
       @NonNull MaterialButton btnDeleteFence, @NonNull MaterialButton btnEditFence,
-      @NonNull MaterialSwitch switchActive, @NonNull TextView tvFenceDistance,
-      @NonNull TextView tvFenceEvents, @NonNull TextView tvFenceInside,
-      @NonNull TextView tvFenceName, @NonNull TextView tvFenceRadius) {
+      @NonNull ImageView ivFenceIcon, @NonNull MaterialSwitch switchActive,
+      @NonNull TextView tvFenceDistance, @NonNull TextView tvFenceEvents,
+      @NonNull TextView tvFenceInside, @NonNull TextView tvFenceName,
+      @NonNull TextView tvFenceRadius) {
     this.rootView = rootView;
     this.btnDeleteFence = btnDeleteFence;
     this.btnEditFence = btnEditFence;
+    this.ivFenceIcon = ivFenceIcon;
     this.switchActive = switchActive;
     this.tvFenceDistance = tvFenceDistance;
     this.tvFenceEvents = tvFenceEvents;
@@ -100,6 +106,12 @@ public final class ItemFenceBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.iv_fence_icon;
+      ImageView ivFenceIcon = ViewBindings.findChildViewById(rootView, id);
+      if (ivFenceIcon == null) {
+        break missingId;
+      }
+
       id = R.id.switch_active;
       MaterialSwitch switchActive = ViewBindings.findChildViewById(rootView, id);
       if (switchActive == null) {
@@ -137,7 +149,8 @@ public final class ItemFenceBinding implements ViewBinding {
       }
 
       return new ItemFenceBinding((MaterialCardView) rootView, btnDeleteFence, btnEditFence,
-          switchActive, tvFenceDistance, tvFenceEvents, tvFenceInside, tvFenceName, tvFenceRadius);
+          ivFenceIcon, switchActive, tvFenceDistance, tvFenceEvents, tvFenceInside, tvFenceName,
+          tvFenceRadius);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

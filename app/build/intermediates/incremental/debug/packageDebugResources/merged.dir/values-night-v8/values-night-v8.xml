@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.GeoFenceApp" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">#86D3DC</item>
+        <item name="colorOnPrimary">#003740</item>
+        <item name="colorPrimaryContainer">#004E58</item>
+        <item name="colorOnPrimaryContainer">#A2EFFA</item>
+    </style>
+</resources>

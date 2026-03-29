@@ -18,6 +18,13 @@ object NotificationHelper {
     const val MONITORING_NOTIFICATION_ID = 2002
     const val EXTRA_NAVIGATE_TO_LOG = "navigate_to_log"
 
+    // Distinct request codes so the two PendingIntents are never considered the same
+    // by the system. If they share a code, FLAG_UPDATE_CURRENT on one overwrites the
+    // other's extras — e.g. tapping the monitoring notification would also navigate to
+    // the log after a fence-event notification had been shown.
+    private const val EVENT_PENDING_INTENT_RC      = 101
+    private const val MONITORING_PENDING_INTENT_RC = 102
+
     fun createNotificationChannel(context: Context) {
         val manager = context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
 
@@ -54,7 +61,7 @@ object NotificationHelper {
             putExtra(EXTRA_NAVIGATE_TO_LOG, true)
         }
         val pendingIntent = PendingIntent.getActivity(
-            context, 0, intent,
+            context, EVENT_PENDING_INTENT_RC, intent,
             PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
         )
 
@@ -74,7 +81,7 @@ object NotificationHelper {
     fun buildMonitoringNotification(context: Context): Notification {
         val intent = Intent(context, MainActivity::class.java)
         val pendingIntent = PendingIntent.getActivity(
-            context, 0, intent,
+            context, MONITORING_PENDING_INTENT_RC, intent,
             PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
         )
         return NotificationCompat.Builder(context, CHANNEL_MONITORING_ID)

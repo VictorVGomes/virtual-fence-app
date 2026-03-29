@@ -3,7 +3,7 @@ package com.victorgomes.geofenceapp.geofence
 import android.annotation.SuppressLint
 import android.content.Context
 import android.location.Location
-import android.os.Looper
+import android.os.HandlerThread
 import android.util.Log
 import androidx.work.CoroutineWorker
 import androidx.work.WorkerParameters
@@ -85,14 +85,19 @@ class TransitionConfirmationWorker(
             Priority.PRIORITY_BALANCED_POWER_ACCURACY, SAMPLE_INTERVAL_MS
         ).setMinUpdateIntervalMillis(SAMPLE_INTERVAL_MS / 2).build()
 
+        // Deliver callbacks on a background thread so GPS fixes don't wake the main looper.
+        val handlerThread = HandlerThread("ConfirmationWorkerLooper").also { it.start() }
         val locationFlow = callbackFlow<Location> {
             val callback = object : LocationCallback() {
                 override fun onLocationResult(result: LocationResult) {
                     result.lastLocation?.let { trySend(it) }
                 }
             }
-            fusedClient.requestLocationUpdates(locationRequest, callback, Looper.getMainLooper())
-            awaitClose { fusedClient.removeLocationUpdates(callback) }
+            fusedClient.requestLocationUpdates(locationRequest, callback, handlerThread.looper)
+            awaitClose {
+                fusedClient.removeLocationUpdates(callback)
+                handlerThread.quit()
+            }
         }
 
         val samples = mutableListOf<Location>()

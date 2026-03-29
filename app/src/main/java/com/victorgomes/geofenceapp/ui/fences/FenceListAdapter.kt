@@ -69,6 +69,16 @@ class FenceListAdapter(
             binding.tvFenceName.text = config.name
             binding.tvFenceRadius.text = "${config.radiusMeters.roundToInt()} m radius"
 
+            val iconRes = when (config.markerIcon) {
+                "bell"   -> com.victorgomes.geofenceapp.R.drawable.ic_fence_bell
+                "flag"   -> com.victorgomes.geofenceapp.R.drawable.ic_fence_flag
+                "heart"  -> com.victorgomes.geofenceapp.R.drawable.ic_fence_heart
+                "home"   -> com.victorgomes.geofenceapp.R.drawable.ic_fence_home
+                "star"   -> com.victorgomes.geofenceapp.R.drawable.ic_fence_star
+                else     -> com.victorgomes.geofenceapp.R.drawable.ic_fence_pin
+            }
+            binding.ivFenceIcon.setImageResource(iconRes)
+
             val loc = userLocation
             if (loc != null) {
                 val results = FloatArray(1)
@@ -108,7 +118,9 @@ class FenceListAdapter(
                 } else {
                     binding.tvFenceInside.text = "Inside"
                 }
-                binding.root.strokeColor = 0xFF00AA00.toInt()
+                binding.root.strokeColor = MaterialColors.getColor(
+                    binding.root, com.google.android.material.R.attr.colorPrimary
+                )
                 binding.root.strokeWidth = (3 * binding.root.context.resources.displayMetrics.density).toInt()
             } else {
                 binding.tvFenceInside.visibility = View.GONE

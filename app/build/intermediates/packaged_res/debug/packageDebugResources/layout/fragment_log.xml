@@ -12,12 +12,20 @@
         android:fitsSystemWindows="true"
         app:liftOnScroll="true">
 
-        <com.google.android.material.appbar.MaterialToolbar
-            android:id="@+id/toolbar"
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            style="@style/Widget.Material3.CollapsingToolbar.Medium"
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            app:title="Event Log"
-            app:titleTextAppearance="?attr/textAppearanceHeadlineSmall" />
+            android:layout_height="wrap_content"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed|snap"
+            app:title="Event Log">
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin" />
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
 
         <HorizontalScrollView
             android:id="@+id/filter_scroll"

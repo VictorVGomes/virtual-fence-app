@@ -20,6 +20,9 @@ drawable ic_fence_home
 drawable ic_fence_pin
 drawable ic_fence_star
 drawable ic_map_type
+drawable ic_nav_fences
+drawable ic_nav_log
+drawable ic_nav_map
 drawable ic_search
 drawable ic_settings
 drawable ic_zoom_in
@@ -94,6 +97,7 @@ id et_search
 id fab_column
 id fencesFragment
 id filter_scroll
+id iv_fence_icon
 id logFragment
 id mapFragment
 id map_view
@@ -123,7 +127,6 @@ id tv_fence_inside
 id tv_fence_name
 id tv_fence_radius
 id tv_fence_status
-id tv_hint
 id tv_map_status
 id tv_obs
 id tv_timestamp

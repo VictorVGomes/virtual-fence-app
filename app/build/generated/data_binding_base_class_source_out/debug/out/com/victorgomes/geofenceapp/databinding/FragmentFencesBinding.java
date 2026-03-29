@@ -34,18 +34,14 @@ public final class FragmentFencesBinding implements ViewBinding {
   @NonNull
   public final TextView tvEmptyFences;
 
-  @NonNull
-  public final TextView tvHint;
-
   private FragmentFencesBinding(@NonNull CoordinatorLayout rootView, @NonNull AppBarLayout appBar,
       @NonNull RecyclerView recyclerViewFences, @NonNull MaterialToolbar toolbarFences,
-      @NonNull TextView tvEmptyFences, @NonNull TextView tvHint) {
+      @NonNull TextView tvEmptyFences) {
     this.rootView = rootView;
     this.appBar = appBar;
     this.recyclerViewFences = recyclerViewFences;
     this.toolbarFences = toolbarFences;
     this.tvEmptyFences = tvEmptyFences;
-    this.tvHint = tvHint;
   }
 
   @Override
@@ -99,14 +95,8 @@ public final class FragmentFencesBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.tv_hint;
-      TextView tvHint = ViewBindings.findChildViewById(rootView, id);
-      if (tvHint == null) {
-        break missingId;
-      }
-
       return new FragmentFencesBinding((CoordinatorLayout) rootView, appBar, recyclerViewFences,
-          toolbarFences, tvEmptyFences, tvHint);
+          toolbarFences, tvEmptyFences);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

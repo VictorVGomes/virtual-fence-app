@@ -3112,6 +3112,9 @@ int drawable ic_mtrl_checked_circle 0x7f0700c3
 int drawable ic_mtrl_chip_checked_black 0x7f0700c4
 int drawable ic_mtrl_chip_checked_circle 0x7f0700c5
 int drawable ic_mtrl_chip_close_circle 0x7f0700c6
+int drawable ic_nav_fences 0x7f07012a
+int drawable ic_nav_log 0x7f07012b
+int drawable ic_nav_map 0x7f07012c
 int drawable ic_search 0x7f0700c7
 int drawable ic_search_black_24 0x7f0700c8
 int drawable ic_settings 0x7f0700c9
@@ -3519,6 +3522,7 @@ int id inward 0x7f080130
 int id is_pooling_container_tag 0x7f080131
 int id italic 0x7f080132
 int id item_touch_helper_previous_elevation 0x7f080133
+int id iv_fence_icon 0x7f08026b
 int id jumpToEnd 0x7f080134
 int id jumpToStart 0x7f080135
 int id labeled 0x7f080136
@@ -3802,7 +3806,6 @@ int id tv_fence_inside 0x7f08024b
 int id tv_fence_name 0x7f08024c
 int id tv_fence_radius 0x7f08024d
 int id tv_fence_status 0x7f08024e
-int id tv_hint 0x7f08024f
 int id tv_map_status 0x7f080250
 int id tv_obs 0x7f080251
 int id tv_timestamp 0x7f080252

@@ -18,6 +18,15 @@
         android:padding="16dp"
         android:gravity="center_vertical">
 
+        <!-- Fence marker icon -->
+        <ImageView
+            android:id="@+id/iv_fence_icon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="12dp"
+            android:contentDescription="Fence icon"
+            app:tint="?attr/colorPrimary" />
+
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -66,7 +75,7 @@
                 android:paddingHorizontal="8dp"
                 android:paddingVertical="3dp"
                 android:textAppearance="?attr/textAppearanceLabelSmall"
-                android:textColor="#FFFFFF"
+                android:textColor="?attr/colorOnPrimaryContainer"
                 android:background="@drawable/bg_inside_badge"
                 android:visibility="gone" />
 

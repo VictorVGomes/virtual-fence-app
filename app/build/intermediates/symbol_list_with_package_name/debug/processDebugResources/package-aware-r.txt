@@ -3113,6 +3113,9 @@ drawable ic_mtrl_checked_circle
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
+drawable ic_nav_fences
+drawable ic_nav_log
+drawable ic_nav_map
 drawable ic_search
 drawable ic_search_black_24
 drawable ic_settings
@@ -3520,6 +3523,7 @@ id inward
 id is_pooling_container_tag
 id italic
 id item_touch_helper_previous_elevation
+id iv_fence_icon
 id jumpToEnd
 id jumpToStart
 id labeled
@@ -3803,7 +3807,6 @@ id tv_fence_inside
 id tv_fence_name
 id tv_fence_radius
 id tv_fence_status
-id tv_hint
 id tv_map_status
 id tv_obs
 id tv_timestamp

@@ -12,22 +12,20 @@
         android:fitsSystemWindows="true"
         app:liftOnScroll="true">
 
-        <com.google.android.material.appbar.MaterialToolbar
-            android:id="@+id/toolbar_fences"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            app:title="My Fences"
-            app:titleTextAppearance="?attr/textAppearanceHeadlineSmall" />
-
-        <TextView
-            android:id="@+id/tv_hint"
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            style="@style/Widget.Material3.CollapsingToolbar.Medium"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingHorizontal="16dp"
-            android:paddingBottom="12dp"
-            android:text="Long-press the map to add a new fence."
-            android:textAppearance="?attr/textAppearanceBodyMedium"
-            android:textColor="?attr/colorOnSurfaceVariant" />
+            app:layout_scrollFlags="scroll|exitUntilCollapsed|snap"
+            app:title="My Fences">
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/toolbar_fences"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin" />
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
 
     </com.google.android.material.appbar.AppBarLayout>
 

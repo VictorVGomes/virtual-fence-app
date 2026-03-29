@@ -1,20 +1,20 @@
 -- Merging decision tree log ---
 provider#androidx.core.content.FileProvider
-INJECTED from C:\Users\victo\OneDrive\Desktop\droid\virtual_fence\app\src\main\AndroidManifest.xml:62:9-70:20
+INJECTED from C:\Users\victo\OneDrive\Desktop\droid\virtual_fence\app\src\main\AndroidManifest.xml:65:9-73:20
 	android:grantUriPermissions
-		ADDED from C:\Users\victo\OneDrive\Desktop\droid\virtual_fence\app\src\main\AndroidManifest.xml:66:13-47
+		ADDED from C:\Users\victo\OneDrive\Desktop\droid\virtual_fence\app\src\main\AndroidManifest.xml:69:13-47
 	android:authorities
 		INJECTED from C:\Users\victo\OneDrive\Desktop\droid\virtual_fence\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\victo\OneDrive\Desktop\droid\virtual_fence\app\src\main\AndroidManifest.xml:64:13-64
+		ADDED from C:\Users\victo\OneDrive\Desktop\droid\virtual_fence\app\src\main\AndroidManifest.xml:67:13-64
 	android:exported
-		ADDED from C:\Users\victo\OneDrive\Desktop\droid\virtual_fence\app\src\main\AndroidManifest.xml:65:13-37
+		ADDED from C:\Users\victo\OneDrive\Desktop\droid\virtual_fence\app\src\main\AndroidManifest.xml:68:13-37
 	android:name
-		ADDED from C:\Users\victo\OneDrive\Desktop\droid\virtual_fence\app\src\main\AndroidManifest.xml:63:13-62
+		ADDED from C:\Users\victo\OneDrive\Desktop\droid\virtual_fence\app\src\main\AndroidManifest.xml:66:13-62
 manifest
-ADDED from C:\Users\victo\OneDrive\Desktop\droid\virtual_fence\app\src\main\AndroidManifest.xml:2:1-82:12
-INJECTED from C:\Users\victo\OneDrive\Desktop\droid\virtual_fence\app\src\main\AndroidManifest.xml:2:1-82:12
-INJECTED from C:\Users\victo\OneDrive\Desktop\droid\virtual_fence\app\src\main\AndroidManifest.xml:2:1-82:12
-INJECTED from C:\Users\victo\OneDrive\Desktop\droid\virtual_fence\app\src\main\AndroidManifest.xml:2:1-82:12
+ADDED from C:\Users\victo\OneDrive\Desktop\droid\virtual_fence\app\src\main\AndroidManifest.xml:2:1-89:12
+INJECTED from C:\Users\victo\OneDrive\Desktop\droid\virtual_fence\app\src\main\AndroidManifest.xml:2:1-89:12
+INJECTED from C:\Users\victo\OneDrive\Desktop\droid\virtual_fence\app\src\main\AndroidManifest.xml:2:1-89:12
+INJECTED from C:\Users\victo\OneDrive\Desktop\droid\virtual_fence\app\src\main\AndroidManifest.xml:2:1-89:12
 MERGED from [androidx.databinding:viewbinding:8.13.2] C:\Users\victo\.gradle\caches\8.13\transforms\c265235b3f46936abc0122b739677d15\transformed\jetified-viewbinding-8.13.2\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.navigation:navigation-common:2.7.7] C:\Users\victo\.gradle\caches\8.13\transforms\51b9bb72785fc17ccc45c5c3331893f1\transformed\navigation-common-2.7.7\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.navigation:navigation-common-ktx:2.7.7] C:\Users\victo\.gradle\caches\8.13\transforms\3c53b68186f2f3a3f1c66e5363ce54c5\transformed\navigation-common-ktx-2.7.7\AndroidManifest.xml:2:1-7:12
@@ -127,39 +127,43 @@ uses-permission#android.permission.POST_NOTIFICATIONS
 ADDED from C:\Users\victo\OneDrive\Desktop\droid\virtual_fence\app\src\main\AndroidManifest.xml:18:5-77
 	android:name
 		ADDED from C:\Users\victo\OneDrive\Desktop\droid\virtual_fence\app\src\main\AndroidManifest.xml:18:22-74
+uses-permission#android.permission.ACTIVITY_RECOGNITION
+ADDED from C:\Users\victo\OneDrive\Desktop\droid\virtual_fence\app\src\main\AndroidManifest.xml:21:5-79
+	android:name
+		ADDED from C:\Users\victo\OneDrive\Desktop\droid\virtual_fence\app\src\main\AndroidManifest.xml:21:22-76
 uses-permission#android.permission.FOREGROUND_SERVICE
-ADDED from C:\Users\victo\OneDrive\Desktop\droid\virtual_fence\app\src\main\AndroidManifest.xml:21:5-77
+ADDED from C:\Users\victo\OneDrive\Desktop\droid\virtual_fence\app\src\main\AndroidManifest.xml:24:5-77
 MERGED from [androidx.work:work-runtime:2.9.0] C:\Users\victo\.gradle\caches\8.13\transforms\dea398c6ce86e387e838d78a068a8341\transformed\work-runtime-2.9.0\AndroidManifest.xml:26:5-77
 MERGED from [androidx.work:work-runtime:2.9.0] C:\Users\victo\.gradle\caches\8.13\transforms\dea398c6ce86e387e838d78a068a8341\transformed\work-runtime-2.9.0\AndroidManifest.xml:26:5-77
 	android:name
-		ADDED from C:\Users\victo\OneDrive\Desktop\droid\virtual_fence\app\src\main\AndroidManifest.xml:21:22-74
+		ADDED from C:\Users\victo\OneDrive\Desktop\droid\virtual_fence\app\src\main\AndroidManifest.xml:24:22-74
 uses-permission#android.permission.FOREGROUND_SERVICE_LOCATION
-ADDED from C:\Users\victo\OneDrive\Desktop\droid\virtual_fence\app\src\main\AndroidManifest.xml:22:5-86
+ADDED from C:\Users\victo\OneDrive\Desktop\droid\virtual_fence\app\src\main\AndroidManifest.xml:25:5-86
 	android:name
-		ADDED from C:\Users\victo\OneDrive\Desktop\droid\virtual_fence\app\src\main\AndroidManifest.xml:22:22-83
+		ADDED from C:\Users\victo\OneDrive\Desktop\droid\virtual_fence\app\src\main\AndroidManifest.xml:25:22-83
 uses-permission#android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS
-ADDED from C:\Users\victo\OneDrive\Desktop\droid\virtual_fence\app\src\main\AndroidManifest.xml:25:5-95
+ADDED from C:\Users\victo\OneDrive\Desktop\droid\virtual_fence\app\src\main\AndroidManifest.xml:28:5-95
 	android:name
-		ADDED from C:\Users\victo\OneDrive\Desktop\droid\virtual_fence\app\src\main\AndroidManifest.xml:25:22-92
+		ADDED from C:\Users\victo\OneDrive\Desktop\droid\virtual_fence\app\src\main\AndroidManifest.xml:28:22-92
 uses-permission#android.permission.ACCESS_MOCK_LOCATION
-ADDED from C:\Users\victo\OneDrive\Desktop\droid\virtual_fence\app\src\main\AndroidManifest.xml:28:5-79
+ADDED from C:\Users\victo\OneDrive\Desktop\droid\virtual_fence\app\src\main\AndroidManifest.xml:31:5-79
 	android:name
-		ADDED from C:\Users\victo\OneDrive\Desktop\droid\virtual_fence\app\src\main\AndroidManifest.xml:28:22-76
+		ADDED from C:\Users\victo\OneDrive\Desktop\droid\virtual_fence\app\src\main\AndroidManifest.xml:31:22-76
 uses-permission#android.permission.WAKE_LOCK
-ADDED from C:\Users\victo\OneDrive\Desktop\droid\virtual_fence\app\src\main\AndroidManifest.xml:31:5-68
+ADDED from C:\Users\victo\OneDrive\Desktop\droid\virtual_fence\app\src\main\AndroidManifest.xml:34:5-68
 MERGED from [androidx.work:work-runtime:2.9.0] C:\Users\victo\.gradle\caches\8.13\transforms\dea398c6ce86e387e838d78a068a8341\transformed\work-runtime-2.9.0\AndroidManifest.xml:23:5-68
 MERGED from [androidx.work:work-runtime:2.9.0] C:\Users\victo\.gradle\caches\8.13\transforms\dea398c6ce86e387e838d78a068a8341\transformed\work-runtime-2.9.0\AndroidManifest.xml:23:5-68
 	android:name
-		ADDED from C:\Users\victo\OneDrive\Desktop\droid\virtual_fence\app\src\main\AndroidManifest.xml:31:22-65
+		ADDED from C:\Users\victo\OneDrive\Desktop\droid\virtual_fence\app\src\main\AndroidManifest.xml:34:22-65
 uses-permission#android.permission.RECEIVE_BOOT_COMPLETED
-ADDED from C:\Users\victo\OneDrive\Desktop\droid\virtual_fence\app\src\main\AndroidManifest.xml:32:5-81
+ADDED from C:\Users\victo\OneDrive\Desktop\droid\virtual_fence\app\src\main\AndroidManifest.xml:35:5-81
 MERGED from [androidx.work:work-runtime:2.9.0] C:\Users\victo\.gradle\caches\8.13\transforms\dea398c6ce86e387e838d78a068a8341\transformed\work-runtime-2.9.0\AndroidManifest.xml:25:5-81
 MERGED from [androidx.work:work-runtime:2.9.0] C:\Users\victo\.gradle\caches\8.13\transforms\dea398c6ce86e387e838d78a068a8341\transformed\work-runtime-2.9.0\AndroidManifest.xml:25:5-81
 	android:name
-		ADDED from C:\Users\victo\OneDrive\Desktop\droid\virtual_fence\app\src\main\AndroidManifest.xml:32:22-78
+		ADDED from C:\Users\victo\OneDrive\Desktop\droid\virtual_fence\app\src\main\AndroidManifest.xml:35:22-78
 application
-ADDED from C:\Users\victo\OneDrive\Desktop\droid\virtual_fence\app\src\main\AndroidManifest.xml:34:5-81:19
-INJECTED from C:\Users\victo\OneDrive\Desktop\droid\virtual_fence\app\src\main\AndroidManifest.xml:34:5-81:19
+ADDED from C:\Users\victo\OneDrive\Desktop\droid\virtual_fence\app\src\main\AndroidManifest.xml:37:5-88:19
+INJECTED from C:\Users\victo\OneDrive\Desktop\droid\virtual_fence\app\src\main\AndroidManifest.xml:37:5-88:19
 MERGED from [com.google.android.material:material:1.11.0] C:\Users\victo\.gradle\caches\8.13\transforms\db37a7991653870c1b9e7aa7043cd672\transformed\material-1.11.0\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.11.0] C:\Users\victo\.gradle\caches\8.13\transforms\db37a7991653870c1b9e7aa7043cd672\transformed\material-1.11.0\AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\victo\.gradle\caches\8.13\transforms\a4fc46656c94004365a3621a1b32c8b3\transformed\constraintlayout-2.1.4\AndroidManifest.xml:9:5-20
@@ -195,73 +199,79 @@ MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\victo\.gradle\cach
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.12.0] C:\Users\victo\.gradle\caches\8.13\transforms\65f364c2f5dd4ee2d922929d79e9879b\transformed\core-1.12.0\AndroidManifest.xml:28:18-86
 	android:supportsRtl
-		ADDED from C:\Users\victo\OneDrive\Desktop\droid\virtual_fence\app\src\main\AndroidManifest.xml:39:9-35
+		ADDED from C:\Users\victo\OneDrive\Desktop\droid\virtual_fence\app\src\main\AndroidManifest.xml:42:9-35
 	android:label
-		ADDED from C:\Users\victo\OneDrive\Desktop\droid\virtual_fence\app\src\main\AndroidManifest.xml:37:9-41
+		ADDED from C:\Users\victo\OneDrive\Desktop\droid\virtual_fence\app\src\main\AndroidManifest.xml:40:9-41
 	android:roundIcon
-		ADDED from C:\Users\victo\OneDrive\Desktop\droid\virtual_fence\app\src\main\AndroidManifest.xml:38:9-48
+		ADDED from C:\Users\victo\OneDrive\Desktop\droid\virtual_fence\app\src\main\AndroidManifest.xml:41:9-48
 	android:icon
-		ADDED from C:\Users\victo\OneDrive\Desktop\droid\virtual_fence\app\src\main\AndroidManifest.xml:36:9-43
+		ADDED from C:\Users\victo\OneDrive\Desktop\droid\virtual_fence\app\src\main\AndroidManifest.xml:39:9-43
 	android:allowBackup
-		ADDED from C:\Users\victo\OneDrive\Desktop\droid\virtual_fence\app\src\main\AndroidManifest.xml:35:9-35
+		ADDED from C:\Users\victo\OneDrive\Desktop\droid\virtual_fence\app\src\main\AndroidManifest.xml:38:9-35
 	android:theme
-		ADDED from C:\Users\victo\OneDrive\Desktop\droid\virtual_fence\app\src\main\AndroidManifest.xml:40:9-49
+		ADDED from C:\Users\victo\OneDrive\Desktop\droid\virtual_fence\app\src\main\AndroidManifest.xml:43:9-49
 	android:networkSecurityConfig
-		ADDED from C:\Users\victo\OneDrive\Desktop\droid\virtual_fence\app\src\main\AndroidManifest.xml:41:9-69
+		ADDED from C:\Users\victo\OneDrive\Desktop\droid\virtual_fence\app\src\main\AndroidManifest.xml:44:9-69
 activity#com.victorgomes.geofenceapp.MainActivity
-ADDED from C:\Users\victo\OneDrive\Desktop\droid\virtual_fence\app\src\main\AndroidManifest.xml:43:9-51:20
+ADDED from C:\Users\victo\OneDrive\Desktop\droid\virtual_fence\app\src\main\AndroidManifest.xml:46:9-54:20
 	android:launchMode
-		ADDED from C:\Users\victo\OneDrive\Desktop\droid\virtual_fence\app\src\main\AndroidManifest.xml:46:13-43
+		ADDED from C:\Users\victo\OneDrive\Desktop\droid\virtual_fence\app\src\main\AndroidManifest.xml:49:13-43
 	android:exported
-		ADDED from C:\Users\victo\OneDrive\Desktop\droid\virtual_fence\app\src\main\AndroidManifest.xml:45:13-36
+		ADDED from C:\Users\victo\OneDrive\Desktop\droid\virtual_fence\app\src\main\AndroidManifest.xml:48:13-36
 	android:name
-		ADDED from C:\Users\victo\OneDrive\Desktop\droid\virtual_fence\app\src\main\AndroidManifest.xml:44:13-41
+		ADDED from C:\Users\victo\OneDrive\Desktop\droid\virtual_fence\app\src\main\AndroidManifest.xml:47:13-41
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\victo\OneDrive\Desktop\droid\virtual_fence\app\src\main\AndroidManifest.xml:47:13-50:29
+ADDED from C:\Users\victo\OneDrive\Desktop\droid\virtual_fence\app\src\main\AndroidManifest.xml:50:13-53:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\victo\OneDrive\Desktop\droid\virtual_fence\app\src\main\AndroidManifest.xml:48:17-69
+ADDED from C:\Users\victo\OneDrive\Desktop\droid\virtual_fence\app\src\main\AndroidManifest.xml:51:17-69
 	android:name
-		ADDED from C:\Users\victo\OneDrive\Desktop\droid\virtual_fence\app\src\main\AndroidManifest.xml:48:25-66
+		ADDED from C:\Users\victo\OneDrive\Desktop\droid\virtual_fence\app\src\main\AndroidManifest.xml:51:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\victo\OneDrive\Desktop\droid\virtual_fence\app\src\main\AndroidManifest.xml:49:17-77
+ADDED from C:\Users\victo\OneDrive\Desktop\droid\virtual_fence\app\src\main\AndroidManifest.xml:52:17-77
 	android:name
-		ADDED from C:\Users\victo\OneDrive\Desktop\droid\virtual_fence\app\src\main\AndroidManifest.xml:49:27-74
+		ADDED from C:\Users\victo\OneDrive\Desktop\droid\virtual_fence\app\src\main\AndroidManifest.xml:52:27-74
 receiver#com.victorgomes.geofenceapp.geofence.GeofenceBroadcastReceiver
-ADDED from C:\Users\victo\OneDrive\Desktop\droid\virtual_fence\app\src\main\AndroidManifest.xml:53:9-55:39
+ADDED from C:\Users\victo\OneDrive\Desktop\droid\virtual_fence\app\src\main\AndroidManifest.xml:56:9-58:39
 	android:exported
-		ADDED from C:\Users\victo\OneDrive\Desktop\droid\virtual_fence\app\src\main\AndroidManifest.xml:55:13-36
+		ADDED from C:\Users\victo\OneDrive\Desktop\droid\virtual_fence\app\src\main\AndroidManifest.xml:58:13-36
 	android:name
-		ADDED from C:\Users\victo\OneDrive\Desktop\droid\virtual_fence\app\src\main\AndroidManifest.xml:54:13-63
+		ADDED from C:\Users\victo\OneDrive\Desktop\droid\virtual_fence\app\src\main\AndroidManifest.xml:57:13-63
 service#com.victorgomes.geofenceapp.service.GeofenceMonitorService
-ADDED from C:\Users\victo\OneDrive\Desktop\droid\virtual_fence\app\src\main\AndroidManifest.xml:57:9-60:56
+ADDED from C:\Users\victo\OneDrive\Desktop\droid\virtual_fence\app\src\main\AndroidManifest.xml:60:9-63:56
 	android:exported
-		ADDED from C:\Users\victo\OneDrive\Desktop\droid\virtual_fence\app\src\main\AndroidManifest.xml:59:13-37
+		ADDED from C:\Users\victo\OneDrive\Desktop\droid\virtual_fence\app\src\main\AndroidManifest.xml:62:13-37
 	android:foregroundServiceType
-		ADDED from C:\Users\victo\OneDrive\Desktop\droid\virtual_fence\app\src\main\AndroidManifest.xml:60:13-53
+		ADDED from C:\Users\victo\OneDrive\Desktop\droid\virtual_fence\app\src\main\AndroidManifest.xml:63:13-53
 	android:name
-		ADDED from C:\Users\victo\OneDrive\Desktop\droid\virtual_fence\app\src\main\AndroidManifest.xml:58:13-59
-receiver#com.victorgomes.geofenceapp.geofence.BootReceiver
-ADDED from C:\Users\victo\OneDrive\Desktop\droid\virtual_fence\app\src\main\AndroidManifest.xml:72:9-79:20
+		ADDED from C:\Users\victo\OneDrive\Desktop\droid\virtual_fence\app\src\main\AndroidManifest.xml:61:13-59
+receiver#com.victorgomes.geofenceapp.geofence.ActivityTransitionReceiver
+ADDED from C:\Users\victo\OneDrive\Desktop\droid\virtual_fence\app\src\main\AndroidManifest.xml:75:9-77:40
 	android:exported
-		ADDED from C:\Users\victo\OneDrive\Desktop\droid\virtual_fence\app\src\main\AndroidManifest.xml:74:13-36
+		ADDED from C:\Users\victo\OneDrive\Desktop\droid\virtual_fence\app\src\main\AndroidManifest.xml:77:13-37
 	android:name
-		ADDED from C:\Users\victo\OneDrive\Desktop\droid\virtual_fence\app\src\main\AndroidManifest.xml:73:13-50
+		ADDED from C:\Users\victo\OneDrive\Desktop\droid\virtual_fence\app\src\main\AndroidManifest.xml:76:13-64
+receiver#com.victorgomes.geofenceapp.geofence.BootReceiver
+ADDED from C:\Users\victo\OneDrive\Desktop\droid\virtual_fence\app\src\main\AndroidManifest.xml:79:9-86:20
+	android:exported
+		ADDED from C:\Users\victo\OneDrive\Desktop\droid\virtual_fence\app\src\main\AndroidManifest.xml:81:13-36
+	android:name
+		ADDED from C:\Users\victo\OneDrive\Desktop\droid\virtual_fence\app\src\main\AndroidManifest.xml:80:13-50
 intent-filter#action:name:android.intent.action.BOOT_COMPLETED+action:name:android.intent.action.MY_PACKAGE_REPLACED
-ADDED from C:\Users\victo\OneDrive\Desktop\droid\virtual_fence\app\src\main\AndroidManifest.xml:75:13-78:29
+ADDED from C:\Users\victo\OneDrive\Desktop\droid\virtual_fence\app\src\main\AndroidManifest.xml:82:13-85:29
 action#android.intent.action.BOOT_COMPLETED
-ADDED from C:\Users\victo\OneDrive\Desktop\droid\virtual_fence\app\src\main\AndroidManifest.xml:76:17-79
+ADDED from C:\Users\victo\OneDrive\Desktop\droid\virtual_fence\app\src\main\AndroidManifest.xml:83:17-79
 	android:name
-		ADDED from C:\Users\victo\OneDrive\Desktop\droid\virtual_fence\app\src\main\AndroidManifest.xml:76:25-76
+		ADDED from C:\Users\victo\OneDrive\Desktop\droid\virtual_fence\app\src\main\AndroidManifest.xml:83:25-76
 action#android.intent.action.MY_PACKAGE_REPLACED
-ADDED from C:\Users\victo\OneDrive\Desktop\droid\virtual_fence\app\src\main\AndroidManifest.xml:77:17-84
+ADDED from C:\Users\victo\OneDrive\Desktop\droid\virtual_fence\app\src\main\AndroidManifest.xml:84:17-84
 	android:name
-		ADDED from C:\Users\victo\OneDrive\Desktop\droid\virtual_fence\app\src\main\AndroidManifest.xml:77:25-81
+		ADDED from C:\Users\victo\OneDrive\Desktop\droid\virtual_fence\app\src\main\AndroidManifest.xml:84:25-81
 meta-data#android.support.FILE_PROVIDER_PATHS
-ADDED from C:\Users\victo\OneDrive\Desktop\droid\virtual_fence\app\src\main\AndroidManifest.xml:67:13-69:54
+ADDED from C:\Users\victo\OneDrive\Desktop\droid\virtual_fence\app\src\main\AndroidManifest.xml:70:13-72:54
 	android:resource
-		ADDED from C:\Users\victo\OneDrive\Desktop\droid\virtual_fence\app\src\main\AndroidManifest.xml:69:17-51
+		ADDED from C:\Users\victo\OneDrive\Desktop\droid\virtual_fence\app\src\main\AndroidManifest.xml:72:17-51
 	android:name
-		ADDED from C:\Users\victo\OneDrive\Desktop\droid\virtual_fence\app\src\main\AndroidManifest.xml:68:17-67
+		ADDED from C:\Users\victo\OneDrive\Desktop\droid\virtual_fence\app\src\main\AndroidManifest.xml:71:17-67
 uses-sdk
 INJECTED from C:\Users\victo\OneDrive\Desktop\droid\virtual_fence\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\victo\OneDrive\Desktop\droid\virtual_fence\app\src\main\AndroidManifest.xml

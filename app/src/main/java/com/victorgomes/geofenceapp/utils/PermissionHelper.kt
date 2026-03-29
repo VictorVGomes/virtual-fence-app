@@ -41,4 +41,18 @@ object PermissionHelper {
             Manifest.permission.POST_NOTIFICATIONS
         ) == PackageManager.PERMISSION_GRANTED
     }
+
+    val ACTIVITY_RECOGNITION_PERMISSION = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+        arrayOf(Manifest.permission.ACTIVITY_RECOGNITION)
+    } else {
+        emptyArray()
+    }
+
+    fun hasActivityRecognitionPermission(context: Context): Boolean {
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.Q) return true
+        return ContextCompat.checkSelfPermission(
+            context,
+            Manifest.permission.ACTIVITY_RECOGNITION
+        ) == PackageManager.PERMISSION_GRANTED
+    }
 }

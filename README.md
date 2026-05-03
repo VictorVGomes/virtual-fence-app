@@ -21,7 +21,7 @@
 
 Virtual Fence lets you draw circular "fences" around any place in the world. The moment you step into or out of a fenced area your device records the event — timestamp, GPS coordinates, and event type. Over time you build up a personal log that shows exactly when and how long you were at each location.
 
-**Why this is useful:** You decide which places deserve attention. Set a fence around your gym, your office, a relative's house, your car, or a neighborhood block. The app answers questions like *"How many hours did I actually spend at the gym this month?"* or *"How often do I visit the park?"* — without any cloud account or subscription.
+**Why this is useful:** You decide which places deserve attention. Set a fence around your gym, your office, a relative's house, or a neighborhood block. The app answers questions like *"How many hours did I actually spend at the gym this month?"* or *"How often do I visit the park?"* — without any cloud account or subscription.
 
 ---
 
@@ -31,16 +31,25 @@ Virtual Fence lets you draw circular "fences" around any place in the world. The
 - **Create geofences** — draw a circle (50 m – 5 000 m radius) around any GPS coordinate with a custom name and icon
 - **Live inside/outside status** — see which fences you are currently inside, with a running timer
 - **Event log** — every fence crossing (ENTER / EXIT) is stored locally with its GPS coordinates and timestamp
-- **Observations** — attach free-text notes to any logged event (weather, what you were doing, etc.)
 - **CSV export** — export your entire event history for analysis in a spreadsheet
 
 ### Map
 - Interactive OpenStreetMap view (offline-capable) showing all your fences and current position
 - Fence boundaries rendered as circles; user position shown with a real-time marker
+- Long-press anywhere to create a new fence; tap an existing fence to edit or delete it
+- Built-in location search
+
+### Statistics
+Three chart visualizations on the Stats screen help you understand your patterns over time:
+
+- **Entry/Exit histogram** — distribution of fence crossings by 5-minute slot across the full day (pinch to zoom); select which fence to inspect via the dropdown
+- **Average daily time per fence** — bar chart showing how many hours per day you spend inside each fence on average; filter by All / Weekdays / Weekends / No Holidays / Workdays
+- **Daily timeline** — swimlane/Gantt chart of every interval inside each fence for the selected day; tap a bar to see start time, end time, and duration; navigate with the day arrows or the date picker
 
 ### Notifications & Background Monitoring
-- Optional push notifications on every fence crossing
+- Optional push notifications on every confirmed fence crossing
 - A foreground service keeps location updates alive so crossings are never missed
+- Activity Recognition integration: the service backs off to 5-minute geofence responsiveness when you are stationary and ramps back to 1-minute responsiveness when you start moving — saving battery without missing crossings
 - Fences are automatically restored after a device reboot
 
 ### Personalization
@@ -54,30 +63,22 @@ Virtual Fence lets you draw circular "fences" around any place in the world. The
 
 ## How fence crossings are confirmed
 
-Raw geofence events from Google Play Services can fire spuriously — a brief GPS jitter while you are standing still, or a "ghost" trigger from fence re-registration, can create false events. Virtual Fence runs every trigger through a **45-second confirmation window** before writing anything to the database:
+Raw geofence events from Google Play Services can fire spuriously — brief GPS jitter or a ghost trigger from fence re-registration can create false events. Virtual Fence runs every trigger through a **45-second confirmation window** before writing anything to the database:
 
 ```
 Trigger received (ENTER or EXIT)
         │
         ▼
-State-machine check ──► discard if transition is impossible
-        │                (e.g. EXIT when no ENTER was ever recorded)
-        ▼
-Collect GPS samples for 45 s at 3-second intervals
+Enqueue TransitionConfirmationWorker (WorkManager, 45 s initial delay)
         │
         ▼
-Filter out samples with accuracy > 1.5 × fence radius
+After 45 s: check that the transition was not immediately reversed
         │
         ▼
-Require ≥ 3 confirming samples that agree on inside/outside
-        │
-        ▼
-Persist event + send notification
+Persist event → send notification
 ```
 
-The timestamp and coordinates stored with the event come from the **first sample of the final confirming run**, not from the original Google trigger. This means the logged position is always a real GPS fix, not an interpolated estimate.
-
-Distance calculations use the **Haversine formula** on the WGS-84 sphere (radius 6 371 000 m), so fence boundaries are accurate anywhere on Earth.
+The 45-second delay filters out brief boundary crossings where the device quickly re-crosses in the opposite direction. Only transitions that are still valid after the window has elapsed are written to the database.
 
 ---
 
@@ -91,17 +92,20 @@ app/
     │   └── repository/        # GeofenceRepository — single data-access point
     ├── geofence/
     │   ├── GeofenceManager              # Registers/unregisters fences with Play Services
-    │   ├── GeofenceBroadcastReceiver    # Receives raw transition intents
-    │   ├── TransitionConfirmationWorker # 45-second GPS confirmation (WorkManager)
+    │   ├── GeofenceBroadcastReceiver    # Receives raw transition intents; enqueues worker
+    │   ├── TransitionConfirmationWorker # 45-second confirmation delay (WorkManager)
+    │   ├── ActivityRecognitionManager   # Registers for STILL_ENTER/STILL_EXIT transitions
+    │   ├── ActivityTransitionReceiver   # Adapts geofence responsiveness to motion state
     │   └── BootReceiver                 # Restores active fences after reboot
     ├── service/
-    │   └── GeofenceMonitorService       # Foreground service; keeps location updates alive
+    │   └── GeofenceMonitorService       # Foreground service; passive-first GPS + watchdog
     ├── ui/
-    │   ├── fences/        # Fence list, creation dialog, live status
-    │   ├── map/           # OSMDroid map fragment
-    │   ├── log/           # Event log, filter, CSV export
-    │   ├── debug/         # Mock location, real-time fence status
-    │   └── personalization/ # Avatar, icons, notification toggle
+    │   ├── fences/        # Fence list, toggle active/inactive, delete, edit
+    │   ├── map/           # OSMDroid map, fence creation, character/icon selection, search
+    │   ├── log/           # Event log, CSV export
+    │   ├── stats/         # Histogram, avg-time chart, swimlane timeline; MPAndroidChart
+    │   ├── personalization/ # Avatar, icons, notification toggle
+    │   └── debug/         # Mock location injection
     └── utils/             # Notifications, permissions, shared prefs
 ```
 
@@ -117,8 +121,10 @@ app/
 | UI | Material Design 3, View Binding, Navigation Component |
 | Architecture | ViewModel, LiveData, Kotlin Coroutines & Flow |
 | Database | Room 2.6 (SQLite, schema version 4) |
-| Location | Google Play Services Location 21.2 (Geofencing + Fused Location) |
+| Location / Geofencing | Google Play Services Location 21.2 |
+| Activity Recognition | Google Play Services Location 21.2 (Activity Transitions API) |
 | Map | OSMDroid 6.1 (OpenStreetMap, offline tiles) |
+| Charts | MPAndroidChart v3.1.0 (via JitPack) |
 | Background work | WorkManager 2.9 |
 | Min / Target SDK | 26 / 34 |
 
@@ -150,16 +156,17 @@ cd virtual_fence
 
 ## Permissions
 
-The app requests the following permissions and explains why:
-
 | Permission | Why |
 |---|---|
-| `ACCESS_FINE_LOCATION` | Precise GPS required for accurate fence boundary checks |
+| `ACCESS_FINE_LOCATION` | Precise GPS required for accurate fence boundary detection |
 | `ACCESS_BACKGROUND_LOCATION` | Detect crossings while the screen is off |
 | `FOREGROUND_SERVICE_LOCATION` | Keep the monitor service alive in the background |
+| `ACTIVITY_RECOGNITION` | Detect when the device is stationary to adapt battery usage |
 | `POST_NOTIFICATIONS` | Show crossing alerts (Android 13+) |
 | `RECEIVE_BOOT_COMPLETED` | Re-register fences after the device restarts |
+| `WAKE_LOCK` | Ensure the confirmation worker completes when the device dozes |
 | `REQUEST_IGNORE_BATTERY_OPTIMIZATIONS` | Prevent the OS from killing the monitor service |
+| `INTERNET` / `ACCESS_NETWORK_STATE` | OSMDroid map tile downloads |
 
 No data ever leaves the device. Everything is stored in a local SQLite database.
 

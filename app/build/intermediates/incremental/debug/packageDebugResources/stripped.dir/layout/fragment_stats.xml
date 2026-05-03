@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.victorgomes.geofenceapp.ui.stats.InterceptingNestedScrollView
+        android:id="@+id/nestedScrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:paddingBottom="80dp">
+
+            <!-- Exposed dropdown for fence selection (histogram filter) -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/spinnerFenceLayout"
+                style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Fence"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="16dp">
+
+                <AutoCompleteTextView
+                    android:id="@+id/spinnerFence"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:focusable="false"
+                    android:inputType="none" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Entry/Exit distribution by hour"
+                android:textAppearance="?attr/textAppearanceTitleSmall"
+                android:layout_marginBottom="8dp" />
+
+            <com.github.mikephil.charting.charts.BarChart
+                android:id="@+id/chartHistogram"
+                android:layout_width="match_parent"
+                android:layout_height="260dp"
+                android:layout_marginBottom="24dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Average daily time per fence"
+                android:textAppearance="?attr/textAppearanceTitleSmall"
+                android:layout_marginBottom="8dp" />
+
+            <!-- Day-of-week / holiday filter chips for the avg-time chart -->
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/chipGroupFilter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                app:singleSelection="true"
+                app:selectionRequired="true">
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipAll"
+                    style="@style/Widget.Material3.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="All"
+                    android:checked="true" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipWeekdays"
+                    style="@style/Widget.Material3.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Weekdays" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipWeekends"
+                    style="@style/Widget.Material3.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Weekends" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipNoHolidays"
+                    style="@style/Widget.Material3.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="No holidays" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipWorkdays"
+                    style="@style/Widget.Material3.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Workdays" />
+
+            </com.google.android.material.chip.ChipGroup>
+
+            <TextView
+                android:id="@+id/tvFilterDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:textAppearance="?attr/textAppearanceBodySmall"
+                android:alpha="0.7" />
+
+            <com.github.mikephil.charting.charts.BarChart
+                android:id="@+id/chartAvgTime"
+                android:layout_width="match_parent"
+                android:layout_height="260dp"
+                android:layout_marginBottom="24dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Today's activity"
+                android:textAppearance="?attr/textAppearanceTitleSmall"
+                android:layout_marginBottom="4dp" />
+
+            <!-- Day navigation row -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="8dp">
+
+                <ImageButton
+                    android:id="@+id/btnPrevDay"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:src="@drawable/ic_chevron_left"
+                    android:contentDescription="Previous day" />
+
+                <TextView
+                    android:id="@+id/tvSelectedDate"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:textAppearance="?attr/textAppearanceBodyMedium"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:background="?attr/selectableItemBackground"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp" />
+
+                <ImageButton
+                    android:id="@+id/btnNextDay"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:src="@drawable/ic_chevron_right"
+                    android:contentDescription="Next day" />
+
+            </LinearLayout>
+
+            <com.victorgomes.geofenceapp.ui.stats.FenceTimelineView
+                android:id="@+id/timelineView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp" />
+
+        </LinearLayout>
+
+    </com.victorgomes.geofenceapp.ui.stats.InterceptingNestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

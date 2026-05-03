@@ -32,8 +32,9 @@ class TransitionConfirmationWorker(
 ) : CoroutineWorker(context, params) {
 
     companion object {
-        const val KEY_FENCE_ID = "fence_id"
+        const val KEY_FENCE_ID   = "fence_id"
         const val KEY_TRANSITION = "transition"
+        const val KEY_TIMESTAMP  = "timestamp"
 
         // Collect samples for up to 45 s at 3 s intervals (≈15 samples max).
         private const val SAMPLE_INTERVAL_MS = 3_000L
@@ -49,9 +50,10 @@ class TransitionConfirmationWorker(
 
     @SuppressLint("MissingPermission")
     override suspend fun doWork(): Result {
-        val fenceId    = inputData.getString(KEY_FENCE_ID)   ?: return Result.failure()
-        val transition = inputData.getString(KEY_TRANSITION) ?: return Result.failure()
-        val isEnter    = transition == "ENTER"
+        val fenceId       = inputData.getString(KEY_FENCE_ID)                      ?: return Result.failure()
+        val transition    = inputData.getString(KEY_TRANSITION)                   ?: return Result.failure()
+        val eventTimestamp = inputData.getLong(KEY_TIMESTAMP, System.currentTimeMillis())
+        val isEnter       = transition == "ENTER"
 
         val repository = GeofenceRepository(applicationContext)
         val fence = repository.getFenceById(fenceId) ?: run {
@@ -155,7 +157,7 @@ class TransitionConfirmationWorker(
         // ── Persist and notify ────────────────────────────────────────────────
         repository.insertEvent(
             GeofenceEventEntity(
-                timestamp  = eventSample.time,
+                timestamp  = eventTimestamp,
                 eventType  = transition,
                 geofenceId = fenceId,
                 latitude   = eventSample.latitude,

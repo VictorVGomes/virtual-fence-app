@@ -73,4 +73,7 @@ dependencies {
 
     // WorkManager (confirmation worker)
     implementation("androidx.work:work-runtime-ktx:2.9.0")
+
+    // Charts (Stats tab)
+    implementation("com.github.PhilJay:MPAndroidChart:v3.1.0")
 }

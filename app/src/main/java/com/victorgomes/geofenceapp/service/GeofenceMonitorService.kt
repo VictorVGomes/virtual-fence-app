@@ -15,6 +15,7 @@ import com.google.android.gms.location.LocationResult
 import com.google.android.gms.location.LocationServices
 import com.google.android.gms.location.Priority
 import com.victorgomes.geofenceapp.data.repository.GeofenceRepository
+import com.victorgomes.geofenceapp.geofence.ActivityRecognitionManager
 import com.victorgomes.geofenceapp.utils.NotificationHelper
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -79,6 +80,7 @@ class GeofenceMonitorService : Service() {
             NotificationHelper.MONITORING_NOTIFICATION_ID,
             NotificationHelper.buildMonitoringNotification(this)
         )
+        ActivityRecognitionManager.start(this)
 
         // Guard against double-start on re-delivery of START_STICKY.
         if (!locationThread.isAlive) locationThread.start()
@@ -109,6 +111,7 @@ class GeofenceMonitorService : Service() {
         watchdogHandler.removeCallbacksAndMessages(null)
         locationThread.quit()
         stopForeground(STOP_FOREGROUND_REMOVE)
+        ActivityRecognitionManager.stop(this)
         super.onDestroy()
     }
 

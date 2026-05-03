@@ -1,6 +1,7 @@
 R_DEF: Internal format may change without notice
 local
 drawable bg_inside_badge
+drawable bg_marker
 drawable ic_char_cat
 drawable ic_char_diamond
 drawable ic_char_dog
@@ -9,6 +10,8 @@ drawable ic_char_female
 drawable ic_char_heart
 drawable ic_char_male
 drawable ic_char_star
+drawable ic_chevron_left
+drawable ic_chevron_right
 drawable ic_close
 drawable ic_debug
 drawable ic_edit_obs
@@ -25,6 +28,7 @@ drawable ic_nav_log
 drawable ic_nav_map
 drawable ic_search
 drawable ic_settings
+drawable ic_stats
 drawable ic_zoom_in
 drawable ic_zoom_out
 drawable ic_zoom_world
@@ -32,6 +36,8 @@ id action_delete_selected
 id action_stats
 id app_bar
 id bottom_navigation_view
+id btnNextDay
+id btnPrevDay
 id btn_center
 id btn_clear_log
 id btn_debug_toggle
@@ -70,6 +76,14 @@ id card_icon_pin
 id card_icon_star
 id card_search
 id card_status
+id chartAvgTime
+id chartHistogram
+id chipAll
+id chipGroupFilter
+id chipNoHolidays
+id chipWeekdays
+id chipWeekends
+id chipWorkdays
 id chip_100m
 id chip_20m
 id chip_500m
@@ -103,18 +117,26 @@ id mapFragment
 id map_view
 id nav_graph
 id nav_host_fragment
+id nestedScrollView
 id personalizationFragment
 id recycler_view
 id recycler_view_fences
 id seek_bar_dialog_radius
+id spinnerFence
+id spinnerFenceLayout
+id statsFragment
 id switch_active
 id switch_debug_mock
 id switch_event_notifications
 id switch_mock
 id tab_layout
 id til_fence_name
+id timelineView
 id toolbar
 id toolbar_fences
+id tvFilterDescription
+id tvMarkerText
+id tvSelectedDate
 id tv_app_version
 id tv_coords
 id tv_debug_coords
@@ -137,8 +159,10 @@ layout fragment_fences
 layout fragment_log
 layout fragment_map
 layout fragment_personalization
+layout fragment_stats
 layout item_fence
 layout item_geofence_event
+layout marker_chart
 menu bottom_nav_menu
 menu menu_log
 mipmap ic_launcher

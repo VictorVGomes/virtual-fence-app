@@ -166,6 +166,10 @@ class MapFragment : Fragment() {
         ActivityResultContracts.RequestMultiplePermissions()
     ) { _ -> }
 
+    private val activityRecognitionLauncher = registerForActivityResult(
+        ActivityResultContracts.RequestMultiplePermissions()
+    ) { _ -> }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -208,6 +212,11 @@ class MapFragment : Fragment() {
             !PermissionHelper.hasNotificationPermission(requireContext())
         ) {
             notificationPermissionLauncher.launch(PermissionHelper.NOTIFICATION_PERMISSION)
+        }
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q &&
+            !PermissionHelper.hasActivityRecognitionPermission(requireContext())
+        ) {
+            activityRecognitionLauncher.launch(PermissionHelper.ACTIVITY_RECOGNITION_PERMISSION)
         }
         when {
             !PermissionHelper.hasLocationPermissions(requireContext()) ->

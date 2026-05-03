@@ -75,6 +75,7 @@ MERGED from [androidx.room:room-ktx:2.6.1] C:\Users\victo\.gradle\caches\8.13\tr
 MERGED from [androidx.sqlite:sqlite-framework:2.4.0] C:\Users\victo\.gradle\caches\8.13\transforms\be716e71e4c2d2e99d83b804f5bd70c6\transformed\sqlite-framework-2.4.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.sqlite:sqlite:2.4.0] C:\Users\victo\.gradle\caches\8.13\transforms\f174711e0682f9d6050e2ff3c2c1f87e\transformed\sqlite-2.4.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.annotation:annotation-experimental:1.3.0] C:\Users\victo\.gradle\caches\8.13\transforms\fafa5944de6bff428dfc08bc7f48a4e0\transformed\jetified-annotation-experimental-1.3.0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.github.PhilJay:MPAndroidChart:v3.1.0] C:\Users\victo\.gradle\caches\8.13\transforms\df60295adbfe4c1eb32da7c538188b56\transformed\jetified-MPAndroidChart-v3.1.0\AndroidManifest.xml:2:1-20:12
 MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\victo\.gradle\caches\8.13\transforms\16ef217e0f17f620bff5e33d53f9f5fc\transformed\cursoradapter-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\victo\.gradle\caches\8.13\transforms\20cfeac2e33ae53a606f8e901bca454f\transformed\cardview-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.arch.core:core-runtime:2.2.0] C:\Users\victo\.gradle\caches\8.13\transforms\e237959e64124a1da2be6a5a73202449\transformed\core-runtime-2.2.0\AndroidManifest.xml:17:1-22:12
@@ -396,6 +397,8 @@ MERGED from [androidx.sqlite:sqlite:2.4.0] C:\Users\victo\.gradle\caches\8.13\tr
 MERGED from [androidx.sqlite:sqlite:2.4.0] C:\Users\victo\.gradle\caches\8.13\transforms\f174711e0682f9d6050e2ff3c2c1f87e\transformed\sqlite-2.4.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.annotation:annotation-experimental:1.3.0] C:\Users\victo\.gradle\caches\8.13\transforms\fafa5944de6bff428dfc08bc7f48a4e0\transformed\jetified-annotation-experimental-1.3.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.annotation:annotation-experimental:1.3.0] C:\Users\victo\.gradle\caches\8.13\transforms\fafa5944de6bff428dfc08bc7f48a4e0\transformed\jetified-annotation-experimental-1.3.0\AndroidManifest.xml:20:5-44
+MERGED from [com.github.PhilJay:MPAndroidChart:v3.1.0] C:\Users\victo\.gradle\caches\8.13\transforms\df60295adbfe4c1eb32da7c538188b56\transformed\jetified-MPAndroidChart-v3.1.0\AndroidManifest.xml:16:5-18:41
+MERGED from [com.github.PhilJay:MPAndroidChart:v3.1.0] C:\Users\victo\.gradle\caches\8.13\transforms\df60295adbfe4c1eb32da7c538188b56\transformed\jetified-MPAndroidChart-v3.1.0\AndroidManifest.xml:16:5-18:41
 MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\victo\.gradle\caches\8.13\transforms\16ef217e0f17f620bff5e33d53f9f5fc\transformed\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\victo\.gradle\caches\8.13\transforms\16ef217e0f17f620bff5e33d53f9f5fc\transformed\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\victo\.gradle\caches\8.13\transforms\20cfeac2e33ae53a606f8e901bca454f\transformed\cardview-1.0.0\AndroidManifest.xml:20:5-44

@@ -3036,6 +3036,7 @@ drawable abc_vector_test
 drawable avd_hide_password
 drawable avd_show_password
 drawable bg_inside_badge
+drawable bg_marker
 drawable bonuspack_bubble
 drawable btn_checkbox_checked_mtrl
 drawable btn_checkbox_checked_to_unchecked_mtrl_animation
@@ -3088,6 +3089,8 @@ drawable ic_char_female
 drawable ic_char_heart
 drawable ic_char_male
 drawable ic_char_star
+drawable ic_chevron_left
+drawable ic_chevron_right
 drawable ic_clear_black_24
 drawable ic_clock_black_24dp
 drawable ic_close
@@ -3119,6 +3122,7 @@ drawable ic_nav_map
 drawable ic_search
 drawable ic_search_black_24
 drawable ic_settings
+drawable ic_stats
 drawable ic_zoom_in
 drawable ic_zoom_out
 drawable ic_zoom_world
@@ -3320,6 +3324,8 @@ id bounce
 id bounceBoth
 id bounceEnd
 id bounceStart
+id btnNextDay
+id btnPrevDay
 id btn_center
 id btn_clear_log
 id btn_debug_toggle
@@ -3376,8 +3382,16 @@ id center_vertical
 id chain
 id chain2
 id chains
+id chartAvgTime
+id chartHistogram
 id checkbox
 id checked
+id chipAll
+id chipGroupFilter
+id chipNoHolidays
+id chipWeekdays
+id chipWeekends
+id chipWorkdays
 id chip_100m
 id chip_20m
 id chip_500m
@@ -3613,6 +3627,7 @@ id navigation_bar_item_labels_group
 id navigation_bar_item_large_label_view
 id navigation_bar_item_small_label_view
 id navigation_header_container
+id nestedScrollView
 id never
 id neverCompleteToEnd
 id neverCompleteToStart
@@ -3720,6 +3735,8 @@ id snapMargins
 id south
 id spacer
 id special_effects_controller_view_tag
+id spinnerFence
+id spinnerFenceLayout
 id spline
 id split_action_bar
 id spread
@@ -3736,6 +3753,7 @@ id startToEnd
 id startVertical
 id staticLayout
 id staticPostLayout
+id statsFragment
 id stop
 id stretch
 id submenuarrow
@@ -3778,6 +3796,7 @@ id textinput_prefix_text
 id textinput_suffix_text
 id til_fence_name
 id time
+id timelineView
 id title
 id titleDividerNoCustom
 id title_template
@@ -3795,6 +3814,9 @@ id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
 id triangle
+id tvFilterDescription
+id tvMarkerText
+id tvSelectedDate
 id tv_app_version
 id tv_coords
 id tv_debug_coords
@@ -3974,6 +3996,7 @@ layout fragment_fences
 layout fragment_log
 layout fragment_map
 layout fragment_personalization
+layout fragment_stats
 layout ime_base_split_test_activity
 layout ime_secondary_split_test_activity
 layout item_fence
@@ -3983,6 +4006,7 @@ layout m3_alert_dialog_actions
 layout m3_alert_dialog_title
 layout m3_auto_complete_simple_item
 layout m3_side_sheet_dialog
+layout marker_chart
 layout material_chip_input_combo
 layout material_clock_display
 layout material_clock_display_divider

@@ -1,15 +1,15 @@
 [
     {
-        "merged": "com.victorgomes.geofenceapp-mergeDebugResources-58:/layout/fragment_fences.xml",
-        "source": "com.victorgomes.geofenceapp-main-61:/layout/fragment_fences.xml"
+        "merged": "com.victorgomes.geofenceapp-mergeDebugResources-58:/layout/fragment_stats.xml",
+        "source": "com.victorgomes.geofenceapp-main-61:/layout/fragment_stats.xml"
     },
     {
         "merged": "C:\\Users\\victo\\.gradle\\daemon\\8.13\\com.victorgomes.geofenceapp-mergeDebugResources-58:\\layout\\fragment_fences.xml",
         "source": "C:\\Users\\victo\\.gradle\\daemon\\8.13\\com.victorgomes.geofenceapp-main-61:\\layout\\fragment_fences.xml"
     },
     {
-        "merged": "com.victorgomes.geofenceapp-mergeDebugResources-58:/layout/fragment_log.xml",
-        "source": "com.victorgomes.geofenceapp-main-61:/layout/fragment_log.xml"
+        "merged": "C:\\Users\\victo\\.gradle\\daemon\\8.13\\com.victorgomes.geofenceapp-mergeDebugResources-58:\\layout\\fragment_stats.xml",
+        "source": "C:\\Users\\victo\\.gradle\\daemon\\8.13\\com.victorgomes.geofenceapp-main-61:\\layout\\fragment_stats.xml"
     },
     {
         "merged": "C:\\Users\\victo\\.gradle\\daemon\\8.13\\com.victorgomes.geofenceapp-mergeDebugResources-58:\\layout\\item_geofence_event.xml",
@@ -18,6 +18,10 @@
     {
         "merged": "C:\\Users\\victo\\.gradle\\daemon\\8.13\\com.victorgomes.geofenceapp-mergeDebugResources-58:\\layout\\fragment_debug.xml",
         "source": "C:\\Users\\victo\\.gradle\\daemon\\8.13\\com.victorgomes.geofenceapp-main-61:\\layout\\fragment_debug.xml"
+    },
+    {
+        "merged": "C:\\Users\\victo\\.gradle\\daemon\\8.13\\com.victorgomes.geofenceapp-mergeDebugResources-58:\\layout\\marker_chart.xml",
+        "source": "C:\\Users\\victo\\.gradle\\daemon\\8.13\\com.victorgomes.geofenceapp-main-61:\\layout\\marker_chart.xml"
     },
     {
         "merged": "C:\\Users\\victo\\.gradle\\daemon\\8.13\\com.victorgomes.geofenceapp-mergeDebugResources-58:\\layout\\fragment_log.xml",
@@ -38,10 +42,6 @@
     {
         "merged": "C:\\Users\\victo\\.gradle\\daemon\\8.13\\com.victorgomes.geofenceapp-mergeDebugResources-58:\\layout\\fragment_personalization.xml",
         "source": "C:\\Users\\victo\\.gradle\\daemon\\8.13\\com.victorgomes.geofenceapp-main-61:\\layout\\fragment_personalization.xml"
-    },
-    {
-        "merged": "com.victorgomes.geofenceapp-mergeDebugResources-58:/layout/item_fence.xml",
-        "source": "com.victorgomes.geofenceapp-main-61:/layout/item_fence.xml"
     },
     {
         "merged": "C:\\Users\\victo\\.gradle\\daemon\\8.13\\com.victorgomes.geofenceapp-mergeDebugResources-58:\\layout\\fragment_map.xml",

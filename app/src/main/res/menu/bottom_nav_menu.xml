@@ -18,6 +18,11 @@
 
 
     <item
+        android:id="@+id/statsFragment"
+        android:icon="@drawable/ic_stats"
+        android:title="Stats" />
+
+    <item
         android:id="@+id/personalizationFragment"
         android:icon="@drawable/ic_settings"
         android:title="Settings" />

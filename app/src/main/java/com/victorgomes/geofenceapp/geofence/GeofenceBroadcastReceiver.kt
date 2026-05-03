@@ -33,11 +33,13 @@ class GeofenceBroadcastReceiver : BroadcastReceiver() {
         // For each triggered fence, enqueue a 30-second confirmation worker.
         // The worker samples GPS during that window and only logs the event if
         // the final position and ≥50 samples agree with the transition type.
+        val detectedAt = System.currentTimeMillis()
         triggeringGeofences.forEach { geofence ->
             Log.d(TAG, "Transition detected: $eventType for ${geofence.requestId} — starting confirmation")
             val workData = workDataOf(
-                TransitionConfirmationWorker.KEY_FENCE_ID to geofence.requestId,
-                TransitionConfirmationWorker.KEY_TRANSITION to eventType
+                TransitionConfirmationWorker.KEY_FENCE_ID  to geofence.requestId,
+                TransitionConfirmationWorker.KEY_TRANSITION to eventType,
+                TransitionConfirmationWorker.KEY_TIMESTAMP  to detectedAt
             )
             val request = OneTimeWorkRequestBuilder<TransitionConfirmationWorker>()
                 .setInputData(workData)

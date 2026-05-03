@@ -16,6 +16,10 @@ app:startDestination="@id/mapFragment" >
     android:name="com.victorgomes.geofenceapp.ui.log.LogFragment"
     android:label="Event Log" />
 <fragment
+    android:id="@+id/statsFragment"
+    android:name="com.victorgomes.geofenceapp.ui.stats.StatsFragment"
+    android:label="Statistics" />
+<fragment
     android:id="@+id/personalizationFragment"
     android:name="com.victorgomes.geofenceapp.ui.personalization.PersonalizationFragment"
     android:label="Personalization" />

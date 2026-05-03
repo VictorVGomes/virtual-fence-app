@@ -31,6 +31,7 @@ class GeofenceManager(private val context: Context) {
         latitude: Double,
         longitude: Double,
         radiusMeters: Float,
+        responsivenessMs: Int = RESPONSIVENESS_NORMAL,
         onSuccess: () -> Unit = {},
         onFailure: (Exception) -> Unit = {}
     ) {
@@ -41,10 +42,7 @@ class GeofenceManager(private val context: Context) {
             .setTransitionTypes(
                 Geofence.GEOFENCE_TRANSITION_ENTER or Geofence.GEOFENCE_TRANSITION_EXIT
             )
-            // The confirmation worker waits 45 s before logging an event, so a
-            // 30-second delivery delay is imperceptible end-to-end but meaningfully
-            // reduces OS wake-ups from the geofencing subsystem.
-            .setNotificationResponsiveness(30_000)
+            .setNotificationResponsiveness(responsivenessMs)
             .build()
 
         val request = GeofencingRequest.Builder()
@@ -90,5 +88,8 @@ class GeofenceManager(private val context: Context) {
     companion object {
         private const val TAG = "GeofenceManager"
         private const val REQUEST_CODE = 1001
+
+        const val RESPONSIVENESS_NORMAL = 60_000   // 1 min — default when moving
+        const val RESPONSIVENESS_STILL  = 300_000  // 5 min — device confirmed stationary
     }
 }
